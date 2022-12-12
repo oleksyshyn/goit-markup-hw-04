@@ -4,6 +4,7 @@
 /* Білий #FFFFFF */
 /* Світло-сірий #F4F4FD */
 /* Cірий #E7E9FC */
+/* Зелений #31D0AA */
 
 html {
     box-sizing: border-box;
@@ -22,6 +23,7 @@ html {
 --white-color: #FFFFFF;
 --light-grey-color: #F4F4FD;
 --grey-color: #E7E9FC;
+--green-color: #31D0AA;
 }
 
 body {
@@ -155,17 +157,15 @@ ul {
 
 .overlay {
     max-width: 1440px;
-    height: 603px;
+    height: 600px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #2E2F42 ;
+    background-color: var(--title-text-colour);
     background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7), rgba(46, 47, 66,0.7)
+        rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)
         ),
     url(../images/bg-image.jpg);
     background-repeat: no-repeat;
-    /* background-position: center;
-    background-size: cover; */
 }
 
 .hero-title {
@@ -239,6 +239,22 @@ ul {
 
 /* Advantages */
 
+.advantages-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 264px;
+    height: 112px;
+    background-color: var(--light-grey-color);
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.advantages-icon {
+    width: 64px;
+    height: 64px;
+}
+
 .advantages-list .title,
 .member-list .title,
 .projects-list .title {
@@ -291,9 +307,45 @@ ul {
 }
 
 .member-description {
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding: 32px 16px;
     background-color: var(--white-color);
+}
+
+.social-network-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 8px;
+}
+
+.social-network {
+    margin-right: 24px;
+}
+
+.social-network:nth-child(4n) {
+    margin-right: 0;
+}
+
+.social-network-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.social-network-item:hover,
+.social-network-item:focus {
+    background-color: var(--green-color);
+}
+
+.social-network-icon {
+    width: 16px;
+    height: 16px;
 }
 
 /* Portfolio */
