@@ -6,6 +6,7 @@
 /* Cірий #E7E9FC */
 /* Зелений #31D0AA */
 /* Колір іконок #8E8F99 */
+/* Активний колір кнопки #404BBF */
 
 html {
     box-sizing: border-box;
@@ -26,6 +27,7 @@ html {
 --grey-color: #E7E9FC;
 --green-color: #31D0AA;
 --icons-color: #8E8F99;
+--active-button-color: #404BBF;
 }
 
 body {
@@ -189,6 +191,7 @@ ul {
 }
 
 .hero .button {
+    display: inline-block;
     padding: 16px 32px;
     background-color: var(--accent-color);
     color: var(--white-color);
@@ -197,12 +200,18 @@ ul {
     line-height: 1.19;
     align-items: center;
     border-color: transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .hero .button:hover,
 .hero .button:focus {
-    background-color: var(--accent-color);
-    color: var(--white-color);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    /* background-color: var(--accent-color);
+    color: var(--white-color); */
+}
+
+.hero .button:active {
+    background-color: var(--active-button-color);
 }
 
 /* Section */
@@ -301,6 +310,7 @@ ul {
 .member-element {
     margin-right: 24px;
     text-align: center;
+    border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
@@ -311,6 +321,7 @@ ul {
 .member-description {
     padding: 32px 16px;
     background-color: var(--white-color);
+    border-radius: 0px 0px 4px 4px;
 }
 
 .social-network-list {
@@ -363,7 +374,6 @@ ul {
 .customer-item {
     width: 168px;
     height: 88px;
-    
     margin-right: 24px;
 }
 
@@ -375,7 +385,8 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #8E8F99;
+    border: 1px solid var(--icons-color);
+    color: var(--icons-color);
     border-radius: 4px;
     width: 100%;
     height: 100%;
@@ -384,17 +395,13 @@ ul {
 .customer-logo:hover,
 .customer-logo:focus {
     border-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .customer-icon {
     width: 104px;
     height: 56px;
-    fill: var(--icons-color);
-}
-
-.customer-icon:hover,
-.customer-icon:focus {
-    fill: var(--accent-color);
+    fill: currentColor;
 }
 
 /* Portfolio */
@@ -423,6 +430,7 @@ ul {
     background-color: var(--accent-color);
     color: var(--white-color);
     border: 1px solid var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Projects */
@@ -433,6 +441,7 @@ ul {
 }
 
 .projects-list .link {
+    display: block;
     color: var(--primary-text-colour);
 }
     
@@ -452,16 +461,15 @@ ul {
     margin-bottom: 0;
 }
 
-.project-card .link:hover,
-.project-card .link:focus {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+.project-link:hover,
+.project-link:focus {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08); */
 }
 
 .card-description {
     padding-left: 16px;
     padding-top: 32px;
     padding-bottom: 32px;
-    
 }
 
 /* Footer */
@@ -472,17 +480,16 @@ ul {
     background-color: var(--title-text-colour);
 }
 
-.footer-position{
+.footer .container {
+    display: flex;
     align-items: baseline;
 }
 
 .footer-description {
-    display: inline-block;
     width: 264px;
 }
 
 .logo-footer {
-    display: inline-block;
     margin-bottom: 16px;
     color: var(--light-grey-color);
     font-family: 'Raleway', sans-serif;
@@ -499,17 +506,17 @@ ul {
 }
 
 .social-media {
-    display: inline-block;
     margin-left: 120px;
 }
 
-.social-media .text {
+.social-media .title {
     font-weight: 700;
     color: var(--white-color);
+    margin-bottom: 16px;
 }
+
 .social-media-list {
     display: flex;
-    margin-top: 16px;
 }
 
 .social-media-item {
